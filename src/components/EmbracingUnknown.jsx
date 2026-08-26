@@ -3,60 +3,24 @@ import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion'
 
 export default function EmbracingUnknown(){
   const reduce=usePrefersReducedMotion()
-  const canvasRef=useRef(null)
-  // glitch canvas effect
-  useEffect(()=>{
-    if(reduce) return
-    const img=new Image()
-    img.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80&auto=format&fit=crop'
-    img.crossOrigin='anonymous'
-    const canvas=canvasRef.current
-    if(!canvas) return
-    const ctx=canvas.getContext('2d')
-    let w,h, raf, interval
-    const draw=()=>{
-      w=canvas.width=canvas.offsetWidth*2
-      h=canvas.height=canvas.offsetHeight*2
-      ctx.filter='grayscale(1) contrast(1.08)'
-      ctx.drawImage(img,0,0,w,h)
-      // slices
-      const slices=28
-      for(let i=0;i<slices;i++){
-        const sliceH=h/slices
-        const y=i*sliceH
-        const centerDist=Math.abs(i - slices/2)/(slices/2)
-        const amp= (1-centerDist)* 60 * (0.3 + Math.random()*0.7*0.3) // idle 30%
-        const off=(Math.random()-0.5)*amp*2
-        if(Math.abs(off)>4){
-          ctx.drawImage(canvas, 0, y, w, sliceH, off, y, w, sliceH)
-          if(Math.random()<0.2){
-            ctx.fillStyle='#81ff28'
-            ctx.fillRect(off>0? w+off-1: off, y, 1, sliceH)
-          }
-        }
-      }
-    }
-    img.onload=()=>{
-      draw()
-      interval=setInterval(draw, 180)
-      let lastY=window.scrollY
-      const onScroll=()=>{
-        const vel=Math.abs(window.scrollY-lastY)
-        lastY=window.scrollY
-        if(vel>4){ clearInterval(interval); interval=setInterval(draw, 90); setTimeout(()=>{clearInterval(interval); interval=setInterval(draw,180)},600)}
-      }
-      window.addEventListener('scroll',onScroll,{passive:true})
-      return()=>window.removeEventListener('scroll',onScroll)
-    }
-    return()=>clearInterval(interval)
-  },[reduce])
 
   return (
     <section className="bg-[#d9d9d9] grid md:grid-cols-[1fr_40px_1fr] items-stretch">
       <div className="relative min-h-[620px] bg-black overflow-hidden">
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{filter:'grayscale(1) contrast(1.08)'}}/>
-        {!reduce && <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80&auto=format&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover grayscale opacity-0" aria-hidden/>}
-        {reduce && <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80&auto=format&fit=crop" alt="Hooded figure" className="absolute inset-0 w-full h-full object-cover grayscale" loading="lazy"/>}
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80&auto=format&fit=crop" alt="Hooded figure" className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.08]" loading="lazy"/>
+        <div className="absolute inset-0 opacity-20 scanline-strip pointer-events-none" aria-hidden/>
+        {/* SVG glitch overlay */}
+        {!reduce && (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40" aria-hidden>
+            <defs>
+              <filter id="glitch">
+                <feTurbulence baseFrequency="0 0.9" numOctaves="1" seed="2"/>
+                <feDisplacementMap in="SourceGraphic" scale="28" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+            </defs>
+            <rect width="100%" height="35%" y="32%" fill="white" filter="url(#glitch)" opacity="0.08"/>
+          </svg>
+        )}
         <div className="absolute top-6 left-6 text-white text-[10px] font-mono uppercase leading-tight">
           <div>ILLUSION</div><div>PERSPECTIVE</div><div>CONTROL</div>
         </div>

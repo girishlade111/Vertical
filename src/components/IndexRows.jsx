@@ -28,14 +28,10 @@ const rows=[
   },
 ]
 
-function highlight(text, limes){
-  let out=text
-  limes.forEach(l=>{
-    out=out.split(l).join(`__LIME__${l}__END__`)
-  })
-  const parts=out.split(/__LIME__|__END__/)
-  // simpler: regex
-  return text
+function LimeText({text, limes}){
+  const pattern = new RegExp(`(${limes.map(l=> l.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')})`, 'g')
+  const parts = text.split(pattern)
+  return <>{parts.map((p,i)=> limes.includes(p) ? <span key={i} className="text-lime">{p}</span> : <span key={i}>{p}</span>)}</>
 }
 
 export default function IndexRows(){
@@ -61,12 +57,7 @@ export default function IndexRows(){
           <div className="relative pl-4">
             <div className="absolute left-0 top-0 bottom-0 w-px bg-white/15 group-hover:bg-lime group-hover:h-full transition-all" style={{height:'40%'}}/>
             <p className="text-[#d9d9d9] uppercase font-black text-[18px] md:text-[20px] leading-tight">
-              {r.text.split(' ').map((w,i)=>{
-                const isLime=r.lime.some(l=>r.text.includes(l) && l.split(' ').includes(w.replace(/[^A-Z,]/g,'')) || r.lime.join(' ').includes(w) )
-                // simpler: check if word is in lime phrases
-                const inLime=r.lime.join(' ').includes(w.replace(/[.,—]/g,''))
-                return <span key={i} className={inLime?'text-lime':''}>{w} </span>
-              })}
+              <LimeText text={r.text} limes={r.lime} />
             </p>
           </div>
         </a>

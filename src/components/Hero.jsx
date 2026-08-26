@@ -122,8 +122,8 @@ export default function Hero(){
         <div className="mt-4 flex justify-end gap-3 items-stretch">
           <div className="w-1 bg-lime self-stretch" style={{transform: loaded?'scaleY(1)':'scaleY(0)', transformOrigin:'top', transition:'transform 0.5s var(--ease-expo) 0.7s'}}/>
           <div className="text-left">
-            <div className="text-lime text-[13px] uppercase font-black tracking-wide">Sachin Devkate</div>
-            <div className="text-white/80 text-[10px] uppercase tracking-[0.12em] font-mono">Designer & Developer<br/>Based in Pune, India</div>
+            <div className="text-lime text-[13px] uppercase font-black tracking-wide">Surya Prakash</div>
+            <div className="text-white/80 text-[10px] uppercase tracking-[0.12em] font-mono">Film Photographer<br/>Based in India</div>
           </div>
         </div>
       </div>
