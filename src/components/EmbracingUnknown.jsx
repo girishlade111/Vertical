@@ -27,10 +27,10 @@ export default function EmbracingUnknown() {
 
         {/* Top Badges */}
         <div className="relative z-10 text-white font-mono text-[10px] uppercase leading-tight tracking-wider">
-          <div>ILLUSION</div>
-          <div>LATENCY</div>
-          <div>PERSPECTIVE</div>
-          <div>CONTROL</div>
+          <div>PLANT FLOOR</div>
+          <div>VIBE CODING</div>
+          <div>ARCHITECTURE</div>
+          <div>TRANSITION</div>
         </div>
 
         {/* Middle Typography */}
@@ -38,15 +38,15 @@ export default function EmbracingUnknown() {
           <h3 className="text-white uppercase font-black leading-[0.88] text-[10vw] md:text-[5.5vw] tracking-tight">
             PATTERNS EMERGE.<br />
             FRICTION CREATES<br />
-            MEANING.
+            MOMENTUM.
           </h3>
         </div>
 
         {/* Bottom Tagline */}
         <div className="relative z-10">
           <div className="text-white uppercase font-black leading-none text-[22px] md:text-[28px] tracking-tight">
-            SIGNALS FORM.<br />
-            SURFACES RESPOND.
+            CODE COMPILES.<br />
+            PRODUCTS SHIP.
           </div>
         </div>
       </div>
@@ -60,16 +60,16 @@ export default function EmbracingUnknown() {
           </h2>
           <div className="mt-3 h-[3px] bg-black w-full" />
           <p className="mt-5 text-black uppercase font-black text-[15px] md:text-[18px] leading-tight">
-            I FOLLOW IDEAS INTO PLACES THAT DON'T HAVE NAMES YET. SOME REVEAL STRUCTURE. SOME COLLAPSE INTO NOISE.
+            TRANSITIONING FROM MECHANICAL ENGINEERING INTO SOFTWARE WITHOUT A CS DEGREE CREATES FRICTION. I EMBRACE THE UNCERTAINTY BY DIRECTING AI TOOLS, BUILDING REAL SYSTEMS, AND LEARNING AT MAXIMUM VELOCITY.
           </p>
         </div>
 
-        {/* Butterfly / Moth Image */}
+        {/* Center Image */}
         <div className="my-8 max-w-[340px]">
           <div className="bg-white overflow-hidden shadow-sm">
             <img
               src="/framer/j0f0boTZxcbNRQJLpyezNUOKAEU.jpg"
-              alt="Moth in motion on white canvas"
+              alt="Embracing the builder transition"
               className="w-full aspect-[4/5] object-cover grayscale contrast-110"
               loading="lazy"
             />
@@ -79,11 +79,11 @@ export default function EmbracingUnknown() {
         {/* Bottom Right Callout */}
         <div className="border-t border-black/20 pt-6">
           <h4 className="text-black uppercase font-black text-[28px] md:text-[36px] leading-[0.95] tracking-tight">
-            WHAT HOLDS UP IS<br />WHAT MATTERS.
+            WHAT SHIPS IS<br />WHAT MATTERS.
           </h4>
           <p className="mt-3 text-[11px] font-mono uppercase tracking-wider text-black/70 font-semibold">
-            OBSERVATION OVER EXPLANATION.<br />
-            PROCESS OVER CERTAINTY.
+            EXECUTION OVER PEDIGREE.<br />
+            SHIPPED TOOLS OVER SPECULATION.
           </p>
         </div>
       </div>
