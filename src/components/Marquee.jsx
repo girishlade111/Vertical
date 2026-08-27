@@ -29,19 +29,19 @@ export default function Marquee(){
         <div ref={trackRef} className="flex will-change-transform" style={reduce? {}:{animation:''}}>
           <div className="flex shrink-0" style={{animation: reduce? 'none':'marquee 45s linear infinite'}}>
             {[0,1].map(i=>(
-              <span key={i} className="text-lime font-black uppercase leading-none text-[22vw] whitespace-nowrap pr-8">VERTICAL&nbsp;</span>
+              <span key={i} className="text-lime font-black uppercase leading-none text-[22vw] whitespace-nowrap pr-8">LADE STACK&nbsp;</span>
             ))}
             {[0,1].map(i=>(
-              <span key={'b'+i} className="text-lime font-black uppercase leading-none text-[22vw] whitespace-nowrap pr-8">VERTICAL&nbsp;</span>
+              <span key={'b'+i} className="text-lime font-black uppercase leading-none text-[22vw] whitespace-nowrap pr-8">LADE STACK&nbsp;</span>
             ))}
           </div>
         </div>
       </div>
       <div className="px-6 md:px-10 mt-4">
-        <p className="text-[#d9d9d9] uppercase font-black leading-none text-[6vw] md:text-[5vw] tracking-tight">THE ARCHIVE OF EVERYTHING I CAN'T KEEP IN ONE PLACE.</p>
+        <p className="text-[#d9d9d9] uppercase font-black leading-none text-[6vw] md:text-[5vw] tracking-tight">THE LIVE ARCHIVE OF EVERYTHING I AM BUILDING AND SHIPPING.</p>
         <div className="mt-6 flex items-center justify-between border-y border-white/15 py-3 text-[10px] font-mono uppercase">
-          <span className="text-white/60 flex items-center gap-2"><span className="w-2 h-2 bg-lime inline-block"/> VERTICAL_STORAGE — 2015-2026</span>
-          <span className="text-white/40">ANALOG ARCHIVES</span>
+          <span className="text-white/60 flex items-center gap-2"><span className="w-2 h-2 bg-lime inline-block"/> LADESTACK_STORAGE — 2024-2026</span>
+          <span className="text-white/40">SOLO DEV BUILDS</span>
         </div>
       </div>
     </section>

@@ -5,24 +5,24 @@ export default function Settle() {
 
   const modules = [
     {
-      tag: null,
+      tag: 'SOURCE — PRODUCTION',
       id: 'MODULE — A.1',
-      text: 'A SECTION OF STUDIES IN RAW STRUCTURE. TEXTURES TESTED UNDER PRESSURE. FORMS PUSHED UNTIL THEY REVEAL INTENTION.',
+      text: 'TOOLS SHIPPED RAPIDLY TO TEST REAL UTILITY. FAST COMPILERS AND IN-BROWSER PDF PROCESSORS VALIDATED IN LIVE PRODUCTION.',
     },
     {
-      tag: null,
+      tag: 'SOURCE — PRUNING',
       id: 'MODULE — A.2',
-      text: 'EXPERIMENTS WITH PHYSICAL MATERIALS AND CONTROLLED DISTORTION. WHERE TOUCH, WEIGHT, AND FAILURE SHAPE THE OUTCOME.',
+      text: "EXPERIMENTS THAT DIDN'T SURVIVE SCRUTINY. OVER-COMPLICATED INTERFACES AND GIMMICKS SCRAPPED TO PROTECT USER FOCUS.",
     },
     {
-      tag: 'SOURCE — FIELD NOTES',
+      tag: 'SOURCE — BUILD LOG',
       id: 'MODULE — A.3',
-      text: 'OBJECTS EXAMINED THROUGH REPETITION. SMALL SHIFTS CREATING NEW PATTERNS. A RECORD OF HOW MATTER RESPONDS TO MOTION.',
+      text: 'REPETITION THROUGH DAILY BUILDING HABITS. BALANCING FULL-TIME PLANT SHIFTS WITH DEEP CODE SESSIONS UNDER PRESSURE.',
     },
     {
-      tag: null,
+      tag: 'SOURCE — ROADMAP',
       id: 'MODULE — A.4',
-      text: 'FRAGMENTS FROM ONGOING INVESTIGATIONS. PART PROTOTYPES, PART UNRESOLVED IDEAS. WORK THAT STAYS HONEST BY NOT PRETENDING TO BE FINISHED.',
+      text: 'UNRELEASED AGENTS AND RAG WORKFLOWS UNDER ACTIVE DEVELOPMENT. REAL TOOLS EARNED THROUGH RELENTLESS ITERATION.',
     },
   ]
 
@@ -43,21 +43,21 @@ export default function Settle() {
         {/* Header Block */}
         <div className="text-center max-w-[1100px] mx-auto">
           <div className="inline-block bg-lime text-black text-[11px] font-mono uppercase px-3 py-1 font-bold tracking-wider">
-            EXPLORATION PHASE
+            BUILD CYCLE
           </div>
 
           <h2
-            data-text="SOME PIECES SETTLE. SOME DON'T."
+            data-text="SOME IDEAS SHIP. SOME GET KILLED."
             className="reveal-settle mt-8 text-white uppercase font-black leading-[0.88] text-[11vw] md:text-[8vw] tracking-tight"
           >
-            SOME PIECES SETTLE.<br />SOME DON'T.
+            SOME IDEAS SHIP.<br />SOME GET KILLED.
           </h2>
 
           <p
-            data-text="BOTH REVEAL SOMETHING THE FINISHED VERSION CAN'T."
+            data-text="BOTH ARE PART OF DISCOVERING WHAT DEVELOPERS NEED."
             className="reveal-settle mt-6 text-white uppercase font-black text-[18px] sm:text-[22px] md:text-[28px] tracking-tight"
           >
-            BOTH REVEAL SOMETHING<br className="sm:hidden" /> THE FINISHED VERSION CAN'T.
+            BOTH ARE PART OF DISCOVERING<br className="sm:hidden" /> WHAT DEVELOPERS NEED.
           </p>
         </div>
 

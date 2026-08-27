@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const words = ['CONFESS', 'RITUALS', 'SIGNALS']
+const words = ['NIGHTS', 'RITUALS', 'SHIPPING']
 
 export default function ModernRituals() {
   useScrollReveal('.reveal-modern')
@@ -40,21 +40,21 @@ export default function ModernRituals() {
             MODERN<br />RITUALS
           </h2>
           <div className="mt-3 text-[11px] font-mono uppercase text-black/70 font-bold tracking-wider">
-            STUDY — 04.13<br />SELECTED WORK
+            ROUTINE — 05.00<br />FOUNDER PRACTICE • PUNE
           </div>
 
           <div className="mt-8 border-l-[5px] border-black pl-5">
             <p
-              data-text="LINES BECOME SIGNALS. SURFACES BECOME STORIES."
+              data-text="FACTORY FLOOR BY DAY. COMPILERS AND PROMPTS BY NIGHT."
               className="reveal-modern text-black uppercase font-black text-[22px] md:text-[30px] leading-tight"
             >
-              LINES BECOME SIGNALS.<br />SURFACES BECOME STORIES.
+              FACTORY FLOOR BY DAY.<br />COMPILERS AND PROMPTS BY NIGHT.
             </p>
             <p
-              data-text="STRUCTURE ARGUES WITH IMPULSE UNTIL BOTH LEARN TO STAND STILL. GRIDS SET THE PACE. MARGINS HOLD THE QUIET."
+              data-text="FULL-TIME MECHANICAL ENGINEERING PLANT SHIFTS DISCIPLINE THE WORKFLOW. NIGHTS ARE DEDICATED TO VIBE CODING, DIRECTING AI AGENTS, AND SHIPPING FREE TOOLS TO PRODUCTION."
               className="reveal-modern mt-3 text-black/80 text-[11px] font-mono uppercase leading-relaxed font-semibold max-w-[520px]"
             >
-              STRUCTURE ARGUES WITH IMPULSE UNTIL BOTH LEARN TO STAND STILL. GRIDS SET THE PACE. MARGINS HOLD THE QUIET.
+              FULL-TIME MECHANICAL ENGINEERING PLANT SHIFTS DISCIPLINE THE WORKFLOW. NIGHTS ARE DEDICATED TO VIBE CODING, DIRECTING AI AGENTS, AND SHIPPING FREE TOOLS TO PRODUCTION.
             </p>
           </div>
         </div>
@@ -62,9 +62,9 @@ export default function ModernRituals() {
         {/* Artifacts Row */}
         <div className="mt-12 pt-8 flex gap-4 items-end">
           {[
-            { tag: 'ARTIFACT—I', img: '/framer/mRBiQFDuE4B7QVSEklk21DWcM.jpeg' },
-            { tag: 'ARTIFACT—II', img: '/framer/gLqCslm3A6i3AkKnPkWHelWtkNo.jpg' },
-            { tag: 'ARTIFACT—III', img: '/framer/3dhrjEKd33WmxaQ1Mtixa0iI3M4.jpeg' },
+            { tag: 'DISCIPLINE', img: '/framer/mRBiQFDuE4B7QVSEklk21DWcM.jpeg' },
+            { tag: 'VIBE CODE', img: '/framer/gLqCslm3A6i3AkKnPkWHelWtkNo.jpg' },
+            { tag: 'PRODUCTION', img: '/framer/3dhrjEKd33WmxaQ1Mtixa0iI3M4.jpeg' },
           ].map((item) => (
             <div key={item.tag} className="flex flex-col items-center">
               <div className="w-[78px] h-[78px] bg-white border-2 border-black overflow-hidden shadow-sm">
@@ -83,11 +83,11 @@ export default function ModernRituals() {
         </div>
       </div>
 
-      {/* Right Image Column with [CONFESS] overlay */}
+      {/* Right Image Column with animated overlay */}
       <div className="relative min-h-[560px] md:min-h-[720px] bg-black overflow-hidden flex items-center justify-center">
         <img
           src="/modern_confessions.jpg"
-          alt="Modern rituals - face wrapped in cellophane"
+          alt="Solo builder nighttime workflow"
           className="absolute inset-0 w-full h-full object-cover grayscale contrast-115 brightness-95"
           loading="lazy"
         />

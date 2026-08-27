@@ -13,9 +13,9 @@ export default function Perspective() {
 
         {/* Top Badges */}
         <div className="relative z-10 text-[11px] font-mono uppercase tracking-wide">
-          <div className="text-black/80 font-bold">INDX —— // CONCEPTUAL</div>
+          <div className="text-black/80 font-bold">INDX —— // DEV LAB</div>
           <div className="mt-2 inline-block bg-black text-white px-2.5 py-1 text-[11px] font-bold tracking-wider">
-            REVISION — NEUE 7.6
+            REVISION — V2.4
           </div>
         </div>
 
@@ -24,7 +24,7 @@ export default function Perspective() {
           <h3 className="font-black uppercase leading-[0.88] tracking-tight text-white text-[14vw] md:text-[6.5vw] drop-shadow-sm">
             NOTHING<br />
             STAYS<br />
-            UNTOUCHED
+            STATIC
           </h3>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function Perspective() {
               </div>
               <div className="mt-2 h-px bg-black w-20" />
               <p className="mt-3 text-[11px] font-mono uppercase leading-relaxed text-black/85">
-                I WORK BETWEEN ORDER AND INTERRUPTION. WHERE CLEAN LINES ARGUE WITH IMPULSE. WHERE RHYTHM BREAKS BEFORE IT RESOLVES.
+                I BUILD IN SHORT CYCLES AND TIGHT FEEDBACK LOOPS. WHERE CODE MEETS REAL USERS. WHERE RAPID PROTOTYPES EVOLVE BEFORE ARCHITECTURE HARDENS.
               </p>
             </div>
 
@@ -58,23 +58,23 @@ export default function Perspective() {
               </div>
               <div className="mt-2 h-px bg-black w-20" />
               <p className="mt-3 text-[11px] font-mono uppercase leading-relaxed text-black/85">
-                VERTICAL IS THE STATE I BUILD IN— A PLACE FOR UNFINISHED THOUGHTS, SHARPENED IDEAS, AND THE THINGS THAT REFUSE SILENCE.
+                LADE STACK IS MY LIVE LABORATORY — A HOME FOR DEFENSIBLE TOOLS, SHIP-FIRST ARCHITECTURE, AND ZERO-LOGIN DEV UTILITIES.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Half: Dark Jellyfish Block */}
+        {/* Bottom Half: Dark Block */}
         <div className="relative min-h-[300px] md:min-h-[360px] bg-black overflow-hidden flex items-end p-6 md:p-10">
           <img
             src="/framer/c1VocAo4m6CyMi0Q18oUoG4UAIM.jpg"
-            alt="Jellyfish in deep space dark water"
+            alt="Product evolution and iteration study"
             className="absolute inset-0 w-full h-full object-cover grayscale opacity-60 contrast-125"
             loading="lazy"
           />
           <div className="relative z-10">
             <p className="font-black uppercase text-white leading-tight text-[18px] sm:text-[22px] md:text-[28px] max-w-[620px] tracking-tight">
-              PAGES BECOME PLACES WORTH LINGERING IN, AND ISSUES BECOME EXPERIENCES PEOPLE ANTICIPATE, KEEP, AND SHARE.
+              SOFTWARE COMES ALIVE WHEN DEPLOYED TO REAL PEOPLE. TOOLS BECOME INDISPENSABLE WHEN THEY REMOVE FRICTION AND NEVER GET IN THE WAY.
             </p>
           </div>
         </div>
