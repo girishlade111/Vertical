@@ -62,7 +62,7 @@ export default function Hero(){
     <section id="hero" className="relative h-[100vh] min-h-[620px] bg-black overflow-hidden flex flex-col">
       {/* portrait */}
       <div ref={portraitRef} className="absolute inset-0 left-[36%] md:left-[42%] will-change-transform" style={!reduce?{animation:'driftPortrait 17s ease-in-out infinite alternate'}:{}}>
-        <img src="/hero.jpg" alt="Portrait of Adam Knoxville" className="w-full h-full object-cover object-top grayscale contrast-[1.06]" loading="eager"
+        <img src="/hero.jpg" alt="Portrait of Girish Lade" className="w-full h-full object-cover object-top grayscale contrast-[1.06]" loading="eager"
           style={{
             opacity: loaded?1:0,
             transform: loaded? 'scale(1)':'scale(1.04)',
@@ -72,7 +72,7 @@ export default function Hero(){
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent w-[30%] pointer-events-none"/>
       </div>
 
-      {/* VER TI CAL */}
+      {/* LA DE STACK */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 pointer-events-none select-none">
         <div className="clip-mask">
           <div ref={verRef} className="text-lime font-black uppercase leading-[0.85] tracking-[-0.04em] text-[22vw] md:text-[19vw] will-change-transform"
@@ -81,7 +81,7 @@ export default function Hero(){
               transition: reduce? 'opacity 0.2s': 'transform 0.9s var(--ease-expo) 0s',
               animation: !reduce && loaded? 'driftVer 11s ease-in-out infinite alternate 1.6s' : undefined
             }}>
-            VER
+            LA
           </div>
         </div>
         <div className="clip-mask ml-[18%] md:ml-[34%] -mt-2 md:-mt-4">
@@ -91,7 +91,7 @@ export default function Hero(){
               transition: reduce? 'opacity 0.2s': 'transform 0.9s var(--ease-expo) 0.12s',
               animation: !reduce && loaded? 'driftTi 13s ease-in-out infinite alternate 1.6s' : undefined
             }}>
-            TI
+            DE
           </div>
         </div>
         <div className="clip-mask ml-[10%] md:ml-[36%] -mt-2 md:-mt-4">
@@ -101,7 +101,7 @@ export default function Hero(){
               transition: reduce? 'opacity 0.2s': 'transform 0.9s var(--ease-expo) 0.24s',
               animation: !reduce && loaded? 'driftCal 9s ease-in-out infinite alternate 1.6s' : undefined
             }}>
-            CAL
+            STACK
           </div>
         </div>
       </div>
@@ -115,15 +115,15 @@ export default function Hero(){
         }}
       >
         <div className="font-black uppercase leading-[0.95] tracking-tight text-[24px] md:text-[36px]">
-          <div className="text-lime">I BREAK THINGS</div>
-          <div className="text-white">TO SEE WHAT</div>
-          <div className="text-white">THEY ARE MADE OF</div>
+          <div className="text-lime">I BUILD &amp; BREAK</div>
+          <div className="text-white">THINGS TO MASTER</div>
+          <div className="text-white">HOW THEY WORK</div>
         </div>
         <div className="mt-4 flex justify-end gap-3 items-center">
           <div className="w-1.5 h-7 bg-lime" style={{transform: loaded?'scaleY(1)':'scaleY(0)', transformOrigin:'top', transition:'transform 0.5s var(--ease-expo) 0.7s'}}/>
           <div className="text-left font-mono">
-            <div className="text-lime text-[13px] uppercase font-black tracking-wider">ADAM KNOXVILLE</div>
-            <div className="text-white/80 text-[10px] uppercase tracking-wider">VISUAL ARTIST/CREATOR</div>
+            <div className="text-lime text-[13px] uppercase font-black tracking-wider">GIRISH LADE</div>
+            <div className="text-white/80 text-[10px] uppercase tracking-wider">SOLO FOUNDER / LADE STACK</div>
           </div>
         </div>
       </div>
@@ -131,10 +131,10 @@ export default function Hero(){
       {/* phase timeline */}
       <div className="absolute top-[58%] md:top-[48%] left-6 md:left-10 right-6 md:right-10 z-20 hidden md:grid grid-cols-4 gap-6">
         {[
-          ['001','BREAK'],
+          ['001','ARCHITECT'],
           ['002','BUILD'],
-          ['003','BEND'],
-          ['004','RELEASE'],
+          ['003','BREAK'],
+          ['004','SHIP'],
         ].map(([num,label],i)=>(
           <div key={num} className="relative">
             <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-wide">
@@ -158,13 +158,13 @@ export default function Hero(){
       {/* index list bottom-left */}
       <div className="absolute bottom-6 md:bottom-8 left-6 md:left-10 z-20 flex gap-4 items-start">
         <div className="hidden md:block text-[10px] font-mono leading-none">
-          <div className="text-white">IDX/AK</div>
+          <div className="text-white">IDX/GL</div>
           <div className="text-lime font-bold">2026</div>
         </div>
         <div className="hidden md:block w-px h-[92px] bg-white/20 self-stretch" style={{transform: loaded?'scaleY(1)':'scaleY(0)', transformOrigin:'top', transition:'transform 0.6s var(--ease-expo) 0.85s'}}/>
         <div className="flex flex-col gap-0.5">
-          {['VISUAL EXPERIMENTS','FORM & FUNCTION','SOUND & MOTION','WRITTEN FRAGMENTS',"THINGS I CAN'T EXPLAIN"].map((t,i)=>(
-            <a key={t} href={`#${['visual','form','sound','written','things'][i]}`} onClick={e=>{e.preventDefault(); document.getElementById(['visual','form','sound','written','things'][i])?.scrollIntoView({behavior:'smooth'})}} className="text-white uppercase font-black text-[12px] md:text-[14px] leading-none tracking-tight hover:text-lime transition-colors"
+          {['PRODUCT BUILDS','SYSTEM & UX','CODE EXPERIMENTS','CAREER LOG','IDEAS IN PROGRESS'].map((t,i)=>(
+            <a key={t} href={`#${['produc','system','codeex','career','ideasi'][i]}`} onClick={e=>{e.preventDefault(); document.getElementById(['produc','system','codeex','career','ideasi'][i])?.scrollIntoView({behavior:'smooth'})}} className="text-white uppercase font-black text-[12px] md:text-[14px] leading-none tracking-tight hover:text-lime transition-colors"
               style={{
                 opacity: loaded?1:0,
                 transform: loaded? 'translateY(0)':'translateY(16px)',
