@@ -1,85 +1,136 @@
 import { useEffect, useRef } from 'react'
 import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion'
 
-export default function WhiteRabbit(){
-  const reduce=usePrefersReducedMotion()
-  const ringRef=useRef(null)
-  useEffect(()=>{
-    if(reduce) return
-    let vel=0, lastY=window.scrollY, speed=1, raf
-    const onScroll=()=>{
-      const d=window.scrollY - lastY
-      vel = d*0.02
-      lastY=window.scrollY
+export default function WhiteRabbit() {
+  const reduce = usePrefersReducedMotion()
+  const ringRef = useRef(null)
+
+  useEffect(() => {
+    if (reduce) return
+    let vel = 0,
+      lastY = window.scrollY,
+      speed = 1,
+      raf
+    const onScroll = () => {
+      const d = window.scrollY - lastY
+      vel = d * 0.02
+      lastY = window.scrollY
       speed = 1 + Math.max(-0.5, Math.min(1, vel))
-      setTimeout(()=>{speed=1},800)
+      setTimeout(() => {
+        speed = 1
+      }, 800)
     }
-    window.addEventListener('scroll', onScroll, {passive:true})
-    let rot=0
-    const loop=()=>{
-      rot += 0.12 * speed
-      if(ringRef.current) ringRef.current.style.transform=`rotate(${rot}deg)`
-      raf=requestAnimationFrame(loop)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    let rot = 0
+    const loop = () => {
+      rot += 0.15 * speed
+      if (ringRef.current) ringRef.current.style.transform = `rotate(${rot}deg)`
+      raf = requestAnimationFrame(loop)
     }
     loop()
-    const io=new IntersectionObserver(([e])=>{
-      if(!e.isIntersecting) cancelAnimationFrame(raf)
-      else { cancelAnimationFrame(raf); loop() }
-    },{threshold:0.2})
-    const sec=document.getElementById('rabbit')
-    if(sec) io.observe(sec)
-    return()=>{window.removeEventListener('scroll',onScroll); cancelAnimationFrame(raf); io.disconnect()}
-  },[reduce])
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting) cancelAnimationFrame(raf)
+        else {
+          cancelAnimationFrame(raf)
+          loop()
+        }
+      },
+      { threshold: 0.1 }
+    )
+    const sec = document.getElementById('rabbit')
+    if (sec) io.observe(sec)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(raf)
+      io.disconnect()
+    }
+  }, [reduce])
+
   return (
-    <section id="rabbit" className="bg-[#efefef] py-12 md:py-16 px-6 md:px-10 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center">
-        <p className="text-black uppercase font-black text-[14px] md:text-[16px] leading-tight">I FOLLOW IDEAS INTO PLACES THAT SHIFT AS I STEP INTO THEM. PATHS APPEAR, VANISH, REAPPEAR SOMEWHERE ELSE.<br/><span className="text-black">BOTH KEEP THE RABBIT MOVING.</span></p>
-        <div className="relative w-[320px] h-[320px] md:w-[460px] md:h-[460px] mx-auto">
-          <div ref={ringRef} className="absolute inset-0 will-change-transform" style={reduce?{}:{}}>
-            <svg viewBox="0 0 460 460" className="w-full h-full">
-              <defs><path id="circle" d="M230 40 A190 190 0 1 1 229.9 40"/></defs>
-              <text fill="#050609" opacity="0.35" fontSize="22" fontWeight="700" letterSpacing="3.2">
-                <textPath href="#circle">CHASING THE WHITE RABBIT * CHASING THE WHITE RABBIT * CHASING THE WHITE RABBIT * </textPath>
+    <section id="rabbit" className="bg-[#efefef] py-16 md:py-24 px-6 md:px-12 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-12 items-center">
+        {/* Left paragraph */}
+        <p className="text-black uppercase font-black text-[15px] md:text-[18px] leading-tight">
+          I FOLLOW IDEAS INTO PLACES THAT SHIFT AS I STEP INTO THEM. PATHS APPEAR, VANISH, REAPPEAR SOMEWHERE ELSE.<br />
+          <span className="text-black font-extrabold mt-2 block">BOTH KEEP THE RABBIT MOVING.</span>
+        </p>
+
+        {/* Center Animated Rabbit Dial */}
+        <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] mx-auto">
+          {/* Rotating Text Ring */}
+          <div ref={ringRef} className="absolute inset-0 will-change-transform">
+            <svg viewBox="0 0 480 480" className="w-full h-full">
+              <defs>
+                <path id="circlePath" d="M 240, 240 m -190, 0 a 190,190 0 1,1 380,0 a 190,190 0 1,1 -380,0" />
+              </defs>
+              <text fill="#050609" opacity="0.3" fontSize="17" fontWeight="900" letterSpacing="4.5">
+                <textPath href="#circlePath">
+                  CHASING THE WHITE RABBIT • CHASING THE WHITE RABBIT • CHASING THE WHITE RABBIT • 
+                </textPath>
               </text>
             </svg>
           </div>
+
+          {/* Authentic Vector Rabbit SVG */}
           <div className="absolute inset-0 grid place-items-center pointer-events-none">
-            <svg width="140" height="180" viewBox="0 0 140 180" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round">
-              <ellipse cx="70" cy="38" rx="28" ry="34" />
-              <ellipse cx="58" cy="14" rx="10" ry="30" />
-              <ellipse cx="82" cy="14" rx="10" ry="30" />
-              <path d="M58 30 L64 38 M82 30 L76 38"/>
-              <text x="62" y="44" fontSize="10" stroke="none" fill="#000">×</text>
-              <text x="80" y="44" fontSize="10" stroke="none" fill="#000">×</text>
-              <path d="M70 48 L66 54 L70 52 L74 54 Z"/>
-              <path d="M42 70 Q70 85 98 70 L98 140 Q70 160 42 140 Z"/>
-              <path d="M52 140 Q48 160 60 165"/>
-              <path d="M88 140 Q92 160 80 165"/>
-              <path d="M30 60 L42 62 M30 68 L42 68 M30 76 L42 74"/>
-              <path d="M110 60 L98 62 M110 68 L98 68 M110 76 L98 74"/>
-            </svg>
+            <img
+              src="/framer/8nraXlqQmF5fUzbvPQXoG2dv944.svg"
+              alt="The White Rabbit vector illustration"
+              className="w-[130px] sm:w-[150px] md:w-[170px] h-auto"
+            />
           </div>
         </div>
-        <p className="text-black/40 uppercase font-black text-[14px] md:text-[16px] leading-tight text-right">BECOMES SOMETHING IT WASN'T MEANT TO BE. I STAY WITH IT UNTIL IT REVEALS A REASON TO FOLLOW.<br/><span className="text-black">THE RABBIT IS NEVER STILL.</span></p>
+
+        {/* Right paragraph */}
+        <p className="text-black/60 uppercase font-black text-[15px] md:text-[18px] leading-tight text-left md:text-right">
+          I CHASE THE THINGS THAT CHANGE DIRECTION WITHOUT WARNING. THE IDEAS THAT START AS ONE THING AND REFUSE TO STAY THERE.<br />
+          <span className="text-black font-extrabold mt-2 block">THE RABBIT IS NEVER STILL.</span>
+        </p>
       </div>
-      <div className="mt-10">
+
+      {/* Vertical Brand Divider */}
+      <div className="mt-16 md:mt-24">
         <div className="text-center">
-          <div className="text-black font-black uppercase leading-none text-[14vw] md:text-[11vw] tracking-tight">VERTICAL</div>
-          <div className="mt-2 h-px bg-black max-w-[1200px] mx-auto flex items-center justify-between px-2">
-            <span className="bg-[#efefef] px-2 -ml-2 font-serif text-xl">A<span className="text-[10px] align-super">K</span></span>
-            <span className="text-[9px] font-mono uppercase bg-[#efefef] px-2">Adam Knoxville</span>
+          <div className="text-black font-black uppercase leading-none text-[16vw] md:text-[13vw] tracking-tight">
+            VERTICAL
+          </div>
+          <div className="mt-2 h-px bg-black max-w-[1300px] mx-auto flex items-center justify-between px-2">
+            <span className="bg-[#efefef] px-2 font-serif text-xl font-bold">
+              A<span className="text-[11px] align-super">K</span>
+            </span>
+            <img
+              src="/framer/fU3WmM3L1vdP5RLFKaBh2WUqVs.svg"
+              alt="Adam Knoxville signature"
+              className="h-5 invert opacity-85 px-2 bg-[#efefef]"
+            />
           </div>
         </div>
-        <div className="mt-8 grid md:grid-cols-3 gap-6 max-w-[1200px] mx-auto bg-black text-white p-6 md:p-8">
+
+        {/* 3 Pillars: VISUAL, FORM, MOTION */}
+        <div className="mt-10 grid md:grid-cols-3 gap-6 max-w-[1300px] mx-auto bg-black text-white p-8 md:p-10 shadow-lg">
           {[
-            ['VISUAL','IMAGES PULLED FROM MOVEMENT, MEMORY, AND INTERRUPTION. STUDIES IN LIGHT, DEPTH, AND DISTORTION. WORK BUILT FROM THE URGE TO SEE WHAT HAPPENS NEXT.'],
-            ['FORM','OBJECTS, SYSTEMS, AND STRUCTURES UNDER TENSION. WHERE FUNCTION BENDS INTO EXPRESSION. TESTS BUILT TO REVEAL HOW MATERIALS BEHAVE WHEN PUSHED.'],
-            ['MOTION','FRAMES DRIVEN BY RHYTHM AND ATMOSPHERE. LOOPS, PULSES, AND SHIFTING PERSPECTIVES. PIECES MEANT TO BE FELT BEFORE THEY\'RE UNDERSTOOD.']
-          ].map(([t,b])=>(
-            <div key={t}>
-              <div className="flex items-center gap-2 text-lime text-[13px] font-black uppercase"><span className="w-2 h-2 rounded-full bg-lime"/> {t}</div>
-              <div className="mt-2 h-px bg-white/15"/>
-              <p className="mt-3 text-[11px] font-mono uppercase leading-relaxed text-white/70">{b}</p>
+            {
+              title: 'VISUAL',
+              body: 'IMAGES SHAPED BY MOVEMENT, MEMORY, AND INTERRUPTION. STUDIES IN LIGHT, DEPTH, AND DISTORTION. WORK BUILT FROM THE URGE TO SEE WHAT HAPPENS NEXT.',
+            },
+            {
+              title: 'FORM',
+              body: 'OBJECTS, SYSTEMS, AND STRUCTURES UNDER TENSION. WHERE FUNCTION BENDS INTO EXPRESSION. TESTS BUILT TO REVEAL HOW MATERIALS BEHAVE WHEN PUSHED.',
+            },
+            {
+              title: 'MOTION',
+              body: 'FRAMES DRIVEN BY RHYTHM AND ATMOSPHERE. LOOPS, PULSES, AND SHIFTING PERSPECTIVES. PIECES MEANT TO BE FELT BEFORE THEY\'RE UNDERSTOOD.',
+            },
+          ].map((item) => (
+            <div key={item.title}>
+              <div className="flex items-center gap-2 text-lime text-[14px] font-black uppercase tracking-wider">
+                <span className="w-2.5 h-2.5 rounded-full bg-lime" /> {item.title}
+              </div>
+              <div className="mt-3 h-px bg-white/20" />
+              <p className="mt-4 text-[12px] font-mono uppercase leading-relaxed text-white/75">
+                {item.body}
+              </p>
             </div>
           ))}
         </div>
