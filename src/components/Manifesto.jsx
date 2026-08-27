@@ -10,18 +10,16 @@ export default function Manifesto(){
       <div className="relative max-w-[1400px] mx-auto grid md:grid-cols-[420px_1fr] gap-8 md:gap-12">
         <div className="hidden md:block">
           <div className="w-full aspect-[4/5] bg-[#111] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop" alt="" className="w-full h-full object-cover grayscale contrast-110" loading="lazy" />
+            <img src="/framer/L61MvCY8ttcVvChrDXLqkdiAcFo.jpg" alt="Manifesto portrait" className="w-full h-full object-cover grayscale contrast-110" loading="lazy" />
           </div>
         </div>
-        <div className="md:pl-6">
+        <div className="md:pl-6 flex flex-col justify-center">
           <p data-text="ART IS A CONTROLLED INTERRUPTION — A PRACTICE OF CATCHING THE MOMENT BEFORE IT DISAPPEARS." className="reveal-manifesto text-white uppercase font-black leading-none text-[28px] md:text-[42px] tracking-tight">
             ART IS A CONTROLLED INTERRUPTION — A PRACTICE OF CATCHING THE MOMENT BEFORE IT DISAPPEARS.
           </p>
-          <p data-text="I WORK ACROSS IMAGE, OBJECT, MOTION, AND SOUND TO TRACE THE SHAPE OF WHAT DOESN'T SIT STILL." className="reveal-manifesto mt-6 text-white uppercase font-black leading-none text-[28px] md:text-[42px] tracking-tight">
+          <p data-text="I WORK ACROSS IMAGE, OBJECT, MOTION, AND SOUND TO TRACE THE SHAPE OF WHAT DOESN'T SIT STILL." className="reveal-manifesto mt-6 text-[#d9d9d9] uppercase font-black leading-none text-[28px] md:text-[42px] tracking-tight">
             I WORK ACROSS IMAGE, OBJECT, MOTION, AND SOUND TO TRACE THE SHAPE OF WHAT DOESN'T SIT STILL.
           </p>
-          <p data-text="IT ISN'T A PORTFOLIO." className="reveal-lime mt-8 text-lime uppercase font-black text-[28px] md:text-[42px] leading-none">IT ISN'T A PORTFOLIO.</p>
-          <p data-text="IT'S THE PLACE WHERE THE WORK REFUSES TO BEHAVE." className="reveal-manifesto mt-3 text-[#d9d9d9] uppercase font-black text-[16px] md:text-[20px]">IT'S THE PLACE WHERE THE WORK REFUSES TO BEHAVE.</p>
         </div>
       </div>
     </section>

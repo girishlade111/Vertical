@@ -61,15 +61,15 @@ export default function Hero(){
   return (
     <section id="hero" className="relative h-[100vh] min-h-[620px] bg-black overflow-hidden flex flex-col">
       {/* portrait */}
-      <div ref={portraitRef} className="absolute inset-0 left-[42%] md:left-[45%] will-change-transform" style={!reduce?{animation:'driftPortrait 17s ease-in-out infinite alternate'}:{}}>
-        <img src="/hero.jpg" alt="Portrait of Adam Knoxville" className="w-full h-full object-cover object-top grayscale contrast-[1.08] " loading="eager"
+      <div ref={portraitRef} className="absolute inset-0 left-[36%] md:left-[42%] will-change-transform" style={!reduce?{animation:'driftPortrait 17s ease-in-out infinite alternate'}:{}}>
+        <img src="/hero.jpg" alt="Portrait of Adam Knoxville" className="w-full h-full object-cover object-top grayscale contrast-[1.06]" loading="eager"
           style={{
             opacity: loaded?1:0,
-            transform: loaded? 'scale(1)':'scale(1.06)',
+            transform: loaded? 'scale(1)':'scale(1.04)',
             transition: reduce? 'opacity 0.2s': 'opacity 1.1s var(--ease-expo) 0.2s, transform 1.1s var(--ease-expo) 0.2s'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/10 pointer-events-none"/>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent w-[30%] pointer-events-none"/>
       </div>
 
       {/* VER TI CAL */}
@@ -107,23 +107,23 @@ export default function Hero(){
       </div>
 
       {/* headline block top-right */}
-      <div className="absolute top-20 md:top-20 right-6 md:right-10 z-20 max-w-[320px] md:max-w-[360px] text-right"
+      <div className="absolute top-16 md:top-20 right-6 md:right-10 z-20 max-w-[340px] md:max-w-[420px] text-right"
         style={{
           opacity: loaded?1:0,
           transform: loaded? 'translateY(0)':'translateY(24px)',
           transition: reduce? 'opacity 0.2s': 'opacity 0.6s var(--ease-expo) 0.5s, transform 0.6s var(--ease-expo) 0.5s'
         }}
       >
-        <div className="font-black uppercase leading-none text-[22px] md:text-[28px]">
-          <div className="text-lime" style={{transitionDelay:'0.52s'}}>I BREAK THINGS</div>
+        <div className="font-black uppercase leading-[0.95] tracking-tight text-[24px] md:text-[36px]">
+          <div className="text-lime">I BREAK THINGS</div>
           <div className="text-white">TO SEE WHAT</div>
           <div className="text-white">THEY ARE MADE OF</div>
         </div>
-        <div className="mt-4 flex justify-end gap-3 items-stretch">
-          <div className="w-1 bg-lime self-stretch" style={{transform: loaded?'scaleY(1)':'scaleY(0)', transformOrigin:'top', transition:'transform 0.5s var(--ease-expo) 0.7s'}}/>
-          <div className="text-left">
-            <div className="text-lime text-[13px] uppercase font-black tracking-wide">Surya Prakash</div>
-            <div className="text-white/80 text-[10px] uppercase tracking-[0.12em] font-mono">Film Photographer<br/>Based in India</div>
+        <div className="mt-4 flex justify-end gap-3 items-center">
+          <div className="w-1.5 h-7 bg-lime" style={{transform: loaded?'scaleY(1)':'scaleY(0)', transformOrigin:'top', transition:'transform 0.5s var(--ease-expo) 0.7s'}}/>
+          <div className="text-left font-mono">
+            <div className="text-lime text-[13px] uppercase font-black tracking-wider">ADAM KNOXVILLE</div>
+            <div className="text-white/80 text-[10px] uppercase tracking-wider">VISUAL ARTIST/CREATOR</div>
           </div>
         </div>
       </div>
