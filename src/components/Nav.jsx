@@ -23,7 +23,7 @@ export default function Nav(){
           ['thoughts','perspective'],
           ['contact','contact']
         ].map(([label,id])=>(
-          <a key={label} href={`#${id}`} onClick={e=>{e.preventDefault(); scrollTo(id)}} className="group relative text-[12px] tracking-[0.04em] uppercase font-bold text-white mix-blend-difference hover:text-[#0000ee] transition-colors" style={{mixBlendMode:'difference'}}>
+          <a key={label} href={`#${id}`} onClick={e=>{e.preventDefault(); scrollTo(id)}} className="group relative text-[12px] tracking-[0.04em] uppercase font-bold text-white mix-blend-difference hover:text-lime transition-colors" style={{mixBlendMode:'difference'}}>
             {label}
             <span className="absolute -bottom-1 left-0 w-full h-px bg-current scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200"/>
           </a>
