@@ -4,7 +4,7 @@ export default function ModusVivendi() {
       <div className="relative min-h-[560px] md:min-h-[680px] overflow-hidden bg-[#c9c9c9]">
         <img
           src="/framer/VP537IhNaTLW7QOkMnGSrpCPh0.jpg"
-          alt="Modus Vivendi - suspended fluid sculpture of woman in motion"
+          alt="Modus Vivendi - engineering and building philosophy"
           className="absolute inset-0 w-full h-full object-cover grayscale contrast-115"
           loading="lazy"
         />
@@ -16,7 +16,7 @@ export default function ModusVivendi() {
         </h2>
         <div className="mt-4 h-[3px] bg-black w-full" />
         <p className="mt-6 text-black uppercase font-extrabold text-[15px] sm:text-[17px] md:text-[19px] leading-relaxed max-w-[580px]">
-          A DELICATE BALANCE OF STILLNESS AND MOVEMENT, PRESENCE AND ABSENCE. IT CAPTURES BODIES IN TRANSFORMATION, SUSPENDED IN QUIET RESISTANCE.
+          A RIGOROUS BALANCE BETWEEN FULL-TIME MANUFACTURING PLANT SHIFTS AND NIGHTTIME SOFTWARE ARCHITECTURE. DISCIPLINE OVER MOTIVATION. SHIPPING WORKING SOFTWARE ALWAYS TRUMPS WAITING FOR PERFECTION.
         </p>
       </div>
     </section>
