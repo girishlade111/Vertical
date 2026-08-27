@@ -15,7 +15,7 @@ export default function Nav(){
   <>
     <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[1001] focus:bg-lime focus:text-primary focus:px-4 focus:py-2 focus:text-sm">Skip to content</a>
     <nav aria-label="Primary" className="fixed top-0 inset-x-0 h-16 flex items-center justify-between px-6 md:px-10 z-[1000] pointer-events-none">
-      <a href="#" onClick={e=>{e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'})}} className="pointer-events-auto font-black text-[22px] tracking-tight lowercase mix-blend-difference text-white focus-visible:outline-lime" style={{mixBlendMode:'difference'}}>vertical</a>
+      <a href="#" onClick={e=>{e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'})}} className="pointer-events-auto font-black text-[22px] tracking-tight lowercase mix-blend-difference text-white focus-visible:outline-lime" style={{mixBlendMode:'difference'}}>ladestack</a>
       <div className="hidden md:flex items-center gap-7 pointer-events-auto">
         {[
           ['work','work'],
