@@ -5,46 +5,46 @@ const galleryData = [
   // Column 1
   [
     {
-      city: 'NEW YORK (2025)',
-      img: '/framer/eEXduufTWysqV1SPGfx1uvy19o.jpeg',
+      city: 'LADESTACK CODER (LIVE)',
+      img: '/images/ladestack-coder.jpg',
       ratio: 'aspect-[3/4]',
-      alt: 'New York architectural light and shadow study',
+      alt: 'LadeStack Coder - AI-powered HTML/CSS/JS compiler and editor',
     },
     {
-      city: 'OSAKA (2019)',
-      img: '/framer/h8sixiviY1fFnSOgNyrAj94ALG8.jpeg',
+      city: 'LS PDF TOOLKIT (LIVE)',
+      img: '/images/ladestack-pdf.jpg',
       ratio: 'aspect-[4/5]',
-      alt: 'Osaka traditional kimono and fan study',
+      alt: 'LS PDF - Free client-side PDF toolkit with zero server upload',
     },
   ],
   // Column 2
   [
     {
-      city: 'PARIS (2023)',
-      img: '/framer/bAWwNVziCexjLuSRptw4jwUUQ.jpeg',
+      city: 'LADEDESIGN (LIVE)',
+      img: '/images/ladestack-design.jpg',
       ratio: 'aspect-[4/5]',
-      alt: 'Paris high-contrast black hood portrait',
+      alt: 'LadeDesign - AI UI/UX tool generating multi-screen application flows',
     },
     {
-      city: 'BRIGHTON (2018)',
-      img: '/framer/aK56biGr27sgC880rdREJrJgTnU.jpg',
+      city: 'LS CLI AGENT (NPM)',
+      img: '/images/ladestack-cli.jpg',
       ratio: 'aspect-[3/4]',
-      alt: 'Brighton abstract motion light blur',
+      alt: 'LS CLI - Terminal-based autonomous AI coding agent package',
     },
   ],
   // Column 3
   [
     {
-      city: 'SINGAPORE (2014)',
-      img: '/framer/DA0Q8AgIJP81uFWvLkpKSZo.jpeg',
+      city: 'LS DOCS EDITOR (DEV)',
+      img: '/images/ladestack-docs.jpg',
       ratio: 'aspect-[4/5]',
-      alt: 'Singapore sculptural white flower study',
+      alt: 'LS Docs - AI-powered document editor and Google Docs alternative',
     },
     {
-      city: 'SYDNEY (2021)',
-      img: '/framer/VfoXBzIkYN2pRlBE6oYYaS97Ec.jpg',
+      city: 'LADESTACK NOTES (DEV)',
+      img: '/images/ladestack-notes.jpg',
       ratio: 'aspect-[3/4]',
-      alt: 'Sydney museum sculpture gallery study',
+      alt: 'LadeStack Notes - NotebookLM-style AI notes with RAG chat',
     },
   ],
 ]
@@ -98,10 +98,10 @@ export default function Gallery() {
         {/* Section Header */}
         <div className="mb-14 md:mb-20 max-w-[900px]">
           <h2 className="text-lime uppercase font-black text-[32px] sm:text-[44px] md:text-[56px] leading-[0.95] tracking-tight">
-            IT ISN'T A PORTFOLIO.
+            IT ISN'T A STATIC RESUME.
           </h2>
           <p className="mt-4 md:mt-6 text-white uppercase font-black text-[18px] sm:text-[22px] md:text-[26px] leading-[1.1] tracking-tight">
-            IT'S THE PLACE WHERE THE WORK STAYS HONEST. AN ONGOING RECORD OF WHAT I MAKE WHEN THOUGHT MOVES FASTER THAN STRUCTURE.
+            IT'S A LIVE RECORD OF WHAT I'M SHIPPING. REAL NO-LOGIN DEV TOOLS, CODE EXPERIMENTS, AND A SYSTEMATIC TRANSITION INTO SOFTWARE ENGINEERING.
           </p>
         </div>
 
