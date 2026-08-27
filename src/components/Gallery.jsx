@@ -93,7 +93,7 @@ export default function Gallery() {
   }, [reduce])
 
   return (
-    <section ref={secRef} id="work" className="relative bg-black px-6 md:px-10 py-16 md:py-28 overflow-hidden">
+    <section ref={secRef} id="work" className="relative bg-black px-6 md:px-10 pt-24 md:pt-36 pb-20 md:pb-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Section Header */}
         <div className="mb-14 md:mb-20 max-w-[900px]">
